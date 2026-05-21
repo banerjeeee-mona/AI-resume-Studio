@@ -6,7 +6,7 @@ import { ResumePreview } from "@/components/ResumePreview";
 import { TemplateSelector } from "@/components/TemplateSelector";
 import { Button } from "@/components/ui/button";
 import { Download, Menu, Sparkles } from "lucide-react";
-import { type ResumeData, type TemplateId, emptyResume } from "@/lib/resume-types";
+import { type ResumeData, type TemplateId, emptyResume, sampleResume } from "@/lib/resume-types";
 import { generateSummary } from "@/lib/dummy-ai";
 import { Toaster, toast } from "sonner";
 
