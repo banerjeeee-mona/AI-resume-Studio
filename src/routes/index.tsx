@@ -6,7 +6,7 @@ import { ResumePreview } from "@/components/ResumePreview";
 import { TemplateSelector } from "@/components/TemplateSelector";
 import { Button } from "@/components/ui/button";
 import { Download, Menu, Sparkles } from "lucide-react";
-import { type ResumeData, type TemplateId, emptyResume } from "@/lib/resume-types";
+import { type ResumeData, type TemplateId, emptyResume, sampleResume } from "@/lib/resume-types";
 import { generateSummary } from "@/lib/dummy-ai";
 import { Toaster, toast } from "sonner";
 
@@ -145,9 +145,61 @@ function ResumeBuilderPage() {
           )}
 
           {view === "settings" && (
-            <div className="card-glow animate-fade-in-up mx-auto max-w-2xl rounded-2xl p-8">
-              <h2 className="text-lg font-semibold text-white">Settings</h2>
-              <p className="mt-1 text-sm text-muted-foreground">Settings coming soon.</p>
+            <div className="card-glow animate-fade-in-up mx-auto max-w-2xl rounded-2xl p-8 space-y-6">
+              <div>
+                <h2 className="text-lg font-semibold text-white">Settings</h2>
+                <p className="mt-1 text-sm text-muted-foreground">Manage your resume data and preferences.</p>
+              </div>
+
+              <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                <div className="font-medium text-white">Default Template</div>
+                <p className="text-xs text-muted-foreground mb-3">Choose which template loads by default.</p>
+                <div className="flex flex-wrap gap-2">
+                  {(["modern", "classic", "minimal"] as TemplateId[]).map((t) => (
+                    <button
+                      key={t}
+                      onClick={() => setTemplate(t)}
+                      className={
+                        "rounded-md px-3 py-1.5 text-xs capitalize transition " +
+                        (template === t
+                          ? "bg-gradient-to-r from-blue-400 to-blue-900 text-white"
+                          : "bg-white/5 text-muted-foreground hover:bg-white/10")
+                      }
+                    >
+                      {t}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                <div className="font-medium text-white">Resume Data</div>
+                <p className="text-xs text-muted-foreground mb-3">Load sample data or clear all fields.</p>
+                <div className="flex flex-wrap gap-2">
+                  <Button
+                    onClick={() => { setData(sampleResume); toast.success("Sample data loaded"); }}
+                    className="gradient-btn text-white"
+                    size="sm"
+                  >
+                    Load Sample
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={() => { setData(emptyResume); toast.success("Resume cleared"); }}
+                    className="border-white/10 bg-white/5 hover:bg-white/10"
+                  >
+                    Clear All
+                  </Button>
+                </div>
+              </div>
+
+              <div className="rounded-xl border border-white/10 bg-white/5 p-4">
+                <div className="font-medium text-white">About</div>
+                <p className="text-xs text-muted-foreground mt-1">
+                  ResumeForge AI Builder · v1.0 · Crafted with a light blue gradient theme.
+                </p>
+              </div>
             </div>
           )}
         </div>
