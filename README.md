@@ -1,6 +1,7 @@
 # AI Resume Builder
-
 An AI-powered Resume Builder web application generated using Lovable AI.
+
+# Live demo: https://airesumestudio.lovable.app
 
 ## Features
 - Resume form
