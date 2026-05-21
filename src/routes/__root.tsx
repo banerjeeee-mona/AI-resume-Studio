@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "ResumeStudio.AI" },
+      { name: "description", content: "Build ATS-friendly resumes effortlessly using AI-assisted resume generation tools." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "ResumeStudio.AI" },
+      { property: "og:description", content: "Build ATS-friendly resumes effortlessly using AI-assisted resume generation tools." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "ResumeStudio.AI" },
+      { name: "twitter:description", content: "Build ATS-friendly resumes effortlessly using AI-assisted resume generation tools." },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4d554cbe-90c3-4db4-a4e5-d6ea613b3020" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/4d554cbe-90c3-4db4-a4e5-d6ea613b3020" },
     ],
     links: [
       {
